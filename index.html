@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Kalda-Clinic | Delhi's Premier Medical & Wellness Clinic</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind Config for Custom Colors & Fonts -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        teal: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            700: '#0f766e',
+                            800: '#115e59',
+                            900: '#134e4a',
+                        },
+                        navy: {
+                            800: '#0f172a',
+                            900: '#0b1329',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Font: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Custom scrollbars & smooth feel */
+        body {
+            font-family: 'Inter', sans-serif;
+            user-select: none; /* Prevents text selection for extra copy-protection */
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+        input, textarea, select {
+            user-select: text !important;
+            -webkit-user-select: text !important;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(16px);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased overflow-x-hidden min-h-screen flex flex-col justify-between">
+
+    <!-- TOP EMERGENCY ANNOUNCEMENT BANNER -->
+    <div class="bg-red-600 text-white text-xs sm:text-sm py-2 px-4 text-center font-medium flex items-center justify-center space-x-3 shadow-sm z-50 relative">
+        <span class="flex h-2.5 w-2.5 relative">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-200 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-white"></span>
+        </span>
+        <span><strong>24/7 Emergency & Ambulance Services (Delhi NCR):</strong> Call <a href="tel:+911140509999" class="underline font-bold hover:text-red-100">+91 11 4050 9999</a></span>
+    </div>
+
+    <!-- MAIN NAVBAR -->
+    <header class="sticky top-0 z-40 glass-nav border-b border-slate-200/80 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- LOGO & BRAND -->
+                <div class="flex items-center space-x-3 cursor-pointer" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+                    <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-teal-600 to-teal-400 flex items-center justify-center text-white shadow-lg shadow-teal-500/20">
+                        <i class="fa-solid font-bold text-2xl fa-user-doctor"></i>
+                    </div>
+                    <div>
+                        <span class="text-2xl font-extrabold tracking-tight text-slate-900 flex items-center gap-1">
+                            Kalda<span class="text-teal-600">-Clinic</span>
+                        </span>
+                        <p class="text-[10px] uppercase tracking-wider text-slate-500 font-semibold">Delhi • Medical & Wellness</p>
+                    </div>
+                </div>
+
+                <!-- DESKTOP NAV LINKS -->
+                <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
+                    <a href="#booking" class="hover:text-teal-600 transition-colors">Book Appointment</a>
+                    <a href="#symptom-checker" class="hover:text-teal-600 transition-colors flex items-center gap-1.5">
+                        <i class="fa-solid fa-wand-magic-sparkles text-teal-500"></i> AI Assistant
+                    </a>
+                    <a href="#live-queue" class="hover:text-teal-600 transition-colors">Live Queue</a>
+                    <a href="#calculator" class="hover:text-teal-600 transition-colors">Fee Estimator</a>
+                    <a href="#doctors" class="hover:text-teal-600 transition-colors">Doctors</a>
+                </nav>
+
+                <!-- HEADER CTA -->
+                <div class="hidden lg:flex items-center space-x-4">
+                    <a href="tel:+911140509999" class="text-xs font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 py-2.5 px-4 rounded-xl transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-phone text-teal-600"></i> +91 11 4050 9999
+                    </a>
+                    <a href="#booking" class="text-xs font-bold text-white bg-teal-600 hover:bg-teal-700 py-2.5 px-5 rounded-xl shadow-md shadow-teal-600/30 transition-all hover:scale-[1.02] active:scale-95">
+                        Book Appointment
+                    </a>
+                </div>
+
+                <!-- MOBILE MENU BUTTON -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-700 hover:text-teal-600 focus:outline-none p-2 rounded-lg">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- MOBILE MENU CONTAINER -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 space-y-3 shadow-xl">
+            <a href="#booking" class="block py-2 text-slate-700 font-semibold hover:text-teal-600 mobile-link">Book Appointment</a>
+            <a href="#symptom-checker" class="block py-2 text-slate-700 font-semibold hover:text-teal-600 mobile-link">AI Symptom Assistant</a>
+            <a href="#live-queue" class="block py-2 text-slate-700 font-semibold hover:text-teal-600 mobile-link">Live Queue Status</a>
+            <a href="#calculator" class="block py-2 text-slate-700 font-semibold hover:text-teal-600 mobile-link">Fee & Cost Calculator</a>
+            <a href="#doctors" class="block py-2 text-slate-700 font-semibold hover:text-teal-600 mobile-link">Our Specialists</a>
+            <div class="pt-2 border-t border-slate-100 flex flex-col gap-2">
+                <a href="tel:+911140509999" class="text-center font-bold text-slate-700 bg-slate-100 py-2.5 rounded-xl">
+                    <i class="fa-solid fa-phone text-teal-600 mr-2"></i> +91 11 4050 9999
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative pt-8 pb-16 lg:pt-16 lg:pb-24 overflow-hidden bg-gradient-to-b from-teal-50/50 via-slate-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-100/80 border border-teal-200 text-teal-800 text-xs font-semibold">
+                        <i class="fa-solid fa-location-dot text-teal-600"></i> South Extension II, New Delhi
+                    </div>
+                    <h1 class="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+                        Delhi’s Most Trusted Healthcare & <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-teal-800">Advanced Care</span>
+                    </h1>
+                    <p class="text-base sm:text-lg text-slate-600 font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        Experience seamless healthcare with top-tier specialists, zero waiting-time appointments, in-clinic physical consultations & high-definition online video sessions.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
+                        <a href="#booking" class="px-7 py-4 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-2xl shadow-lg shadow-teal-600/30 transition-all hover:scale-105 text-center flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-calendar-check"></i> Book Appointment Now
+                        </a>
+                        <a href="#symptom-checker" class="px-7 py-4 bg-white hover:bg-slate-100 text-slate-700 font-semibold border border-slate-200 rounded-2xl transition-all text-center flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-stethoscope text-teal-600"></i> AI Symptom Triage
+                        </a>
+                    </div>
+
+                    <!-- HERO BADGES -->
+                    <div class="pt-6 grid grid-cols-3 gap-4 border-t border-slate-200 max-w-lg mx-auto lg:mx-0">
+                        <div>
+                            <p class="text-2xl font-black text-slate-900">15+</p>
+                            <p class="text-xs text-slate-500 font-medium">Senior Specialists</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-black text-slate-900">99.4%</p>
+                            <p class="text-xs text-slate-500 font-medium">Patient Satisfaction</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-black text-slate-900">4.9 ★</p>
+                            <p class="text-xs text-slate-500 font-medium">Google Reviews</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HERO STAT / LIVE TOKEN WIDGET -->
+                <div class="lg:col-span-5">
+                    <div class="glass-card p-6 sm:p-8 rounded-3xl shadow-xl shadow-slate-200/60 relative">
+                        <div class="flex items-center justify-between pb-4 border-b border-slate-200">
+                            <div class="flex items-center gap-2">
+                                <span class="relative flex h-3 w-3">
+                                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                  <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                                </span>
+                                <h3 class="font-bold text-slate-900 text-sm uppercase tracking-wider">Live OPD Queue Tracker</h3>
+                            </div>
+                            <span class="text-xs bg-emerald-100 text-emerald-800 font-bold px-2.5 py-1 rounded-full">Real-time</span>
+                        </div>
+
+                        <div class="py-6 text-center space-y-2">
+                            <p class="text-xs font-semibold text-slate-500 uppercase tracking-widest">Currently Serving Token</p>
+                            <div class="text-6xl font-black text-teal-600 tracking-tight" id="live-token-display">#18</div>
+                            <p class="text-xs text-slate-600 font-medium flex items-center justify-center gap-1 pt-2">
+                                <i class="fa-regular fa-clock text-teal-600"></i> Avg. Wait Time: <span class="font-bold text-slate-800">~10 Mins</span>
+                            </p>
+                        </div>
+
+                        <div class="bg-slate-100/90 rounded-2xl p-4 text-xs space-y-2">
+                            <div class="flex justify-between text-slate-600">
+                                <span>OPD Hours:</span>
+                                <span class="font-bold text-slate-800">08:00 AM - 08:30 PM</span>
+                            </div>
+                            <div class="flex justify-between text-slate-600">
+                                <span>Delhi Clinic Address:</span>
+                                <span class="font-bold text-slate-800">E-45, South Ext Part 2</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- AI SYMPTOM CHECKER SECTION -->
+    <section id="symptom-checker" class="py-16 bg-white border-y border-slate-200/70">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <span class="bg-teal-100 text-teal-800 text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Smart Assistant</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2">AI Health Symptom Triage</h2>
+                <p class="text-slate-600 text-sm mt-1">Select your primary symptom to find the right department & doctor instantly.</p>
+            </div>
+
+            <div class="bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm">
+                <p class="text-sm font-bold text-slate-700 mb-4">What symptom are you experiencing today?</p>
+                
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3" id="symptom-tags-container">
+                    <!-- JS Injected Symptoms -->
+                </div>
+
+                <div id="symptom-recommendation" class="mt-6 p-4 rounded-2xl bg-teal-50 border border-teal-200 hidden transition-all">
+                    <div class="flex items-start gap-3">
+                        <i class="fa-solid fa-circle-info text-teal-600 text-lg mt-0.5"></i>
+                        <div>
+                            <h4 class="text-sm font-bold text-teal-900" id="rec-department-title">Recommended Specialty</h4>
+                            <p class="text-xs text-teal-700 mt-0.5" id="rec-department-desc">Description will appear here.</p>
+                            <button onclick="filterDepartmentFromSymptom()" class="mt-3 text-xs bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded-xl shadow-sm transition-all">
+                                Proceed to Book Doctor
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE APPOINTMENT BOOKING FLOW -->
+    <section id="booking" class="py-16 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <span class="bg-teal-100 text-teal-800 text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Quick Booking</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Book Your Appointment</h2>
+                <p class="text-slate-600 text-sm mt-1">Complete the steps below for instant digital ticket generation</p>
+            </div>
+
+            <!-- STEP INDICATOR -->
+            <div class="mb-10 max-w-3xl mx-auto">
+                <div class="flex items-center justify-between relative">
+                    <div class="absolute left-0 top-1/2 transform -translate-y-1/2 h-1 bg-slate-200 w-full z-0"></div>
+                    <div id="step-progress-bar" class="absolute left-0 top-1/2 transform -translate-y-1/2 h-1 bg-teal-600 w-0 transition-all duration-300 z-0"></div>
+
+                    <!-- Step 1 Circle -->
+                    <div class="step-indicator z-10 flex flex-col items-center" data-step="1">
+                        <div class="w-10 h-10 rounded-full bg-teal-600 text-white font-bold flex items-center justify-center shadow-md transition-all">1</div>
+                        <span class="text-[11px] font-semibold text-slate-700 mt-2">Department</span>
+                    </div>
+
+                    <!-- Step 2 Circle -->
+                    <div class="step-indicator z-10 flex flex-col items-center" data-step="2">
+                        <div class="w-10 h-10 rounded-full bg-slate-200 text-slate-600 font-bold flex items-center justify-center shadow-md transition-all">2</div>
+                        <span class="text-[11px] font-semibold text-slate-500 mt-2">Doctor</span>
+                    </div>
+
+                    <!-- Step 3 Circle -->
+                    <div class="step-indicator z-10 flex flex-col items-center" data-step="3">
+                        <div class="w-10 h-10 rounded-full bg-slate-200 text-slate-600 font-bold flex items-center justify-center shadow-md transition-all">3</div>
+                        <span class="text-[11px] font-semibold text-slate-500 mt-2">Visit Type</span>
+                    </div>
+
+                    <!-- Step 4 Circle -->
+                    <div class="step-indicator z-10 flex flex-col items-center" data-step="4">
+                        <div class="w-10 h-10 rounded-full bg-slate-200 text-slate-600 font-bold flex items-center justify-center shadow-md transition-all">4</div>
+                        <span class="text-[11px] font-semibold text-slate-500 mt-2">Slot</span>
+                    </div>
+
+                    <!-- Step 5 Circle -->
+                    <div class="step-indicator z-10 flex flex-col items-center" data-step="5">
+                        <div class="w-10 h-10 rounded-full bg-slate-200 text-slate-600 font-bold flex items-center justify-center shadow-md transition-all">5</div>
+                        <span class="text-[11px] font-semibold text-slate-500 mt-2">Confirm</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BOOKING WIZARD CARD -->
+            <div class="bg-white rounded-3xl border border-slate-200 shadow-xl p-6 sm:p-10 transition-all">
+                
+                <!-- STEP 1: SPECIALTY SELECTION -->
+                <div id="wizard-step-1" class="wizard-step">
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Select Medical Specialty</h3>
+                    <p class="text-xs text-slate-500 mb-6">Choose the clinic department appropriate for your consultation</p>
+                    
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4" id="department-grid">
+                        <!-- JS Injected Departments -->
+                    </div>
+
+                    <div class="mt-8 flex justify-end">
+                        <button onclick="nextStep(2)" id="btn-step-1-next" disabled class="px-6 py-3 bg-slate-300 text-slate-500 font-bold rounded-xl cursor-not-allowed transition-all">
+                            Next: Select Doctor <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- STEP 2: DOCTOR SELECTION -->
+                <div id="wizard-step-2" class="wizard-step hidden">
+                    <div class="flex items-center justify-between mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-900">Select Doctor</h3>
+                            <p class="text-xs text-slate-500">Available specialists in selected department</p>
+                        </div>
+                        <button onclick="prevStep(1)" class="text-xs font-bold text-teal-600 hover:underline">Change Department</button>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-4" id="doctors-list-container">
+                        <!-- JS Injected Doctors -->
+                    </div>
+
+                    <div class="mt-8 flex justify-between">
+                        <button onclick="prevStep(1)" class="px-6 py-3 bg-slate-100 text-slate-700 font-semibold rounded-xl hover:bg-slate-200">Back</button>
+                        <button onclick="nextStep(3)" id="btn-step-2-next" disabled class="px-6 py-3 bg-slate-300 text-slate-500 font-bold rounded-xl cursor-not-allowed transition-all">
+                            Next: Visit Type <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- STEP 3: CONSULTATION TYPE -->
+                <div id="wizard-step-3" class="wizard-step hidden">
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Choose Mode of Consultation</h3>
+                    <p class="text-xs text-slate-500 mb-6">Select physical clinic visit or HD online tele-consultation</p>
+
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <!-- Option A: In Clinic -->
+                        <div onclick="selectConsultationType('In-Clinic Visit', 0)" id="type-in-clinic" class="cursor-pointer border-2 border-slate-200 hover:border-teal-500 rounded-2xl p-6 text-center transition-all">
+                            <div class="w-14 h-14 mx-auto rounded-2xl bg-teal-100 text-teal-700 flex items-center justify-center text-2xl mb-4">
+                                <i class="fa-solid fa-hospital-user"></i>
+                            </div>
+                            <h4 class="font-bold text-slate-900 text-lg">In-Clinic Visit</h4>
+                            <p class="text-xs text-slate-500 mt-1">Physical check-up at Kalda Clinic, South Extension II, Delhi.</p>
+                            <span class="inline-block mt-4 text-xs font-bold bg-teal-50 text-teal-700 px-3 py-1 rounded-full">Standard Fee Applies</span>
+                        </div>
+
+                        <!-- Option B: Video Call -->
+                        <div onclick="selectConsultationType('Online Video Consult', 0)" id="type-online" class="cursor-pointer border-2 border-slate-200 hover:border-teal-500 rounded-2xl p-6 text-center transition-all">
+                            <div class="w-14 h-14 mx-auto rounded-2xl bg-blue-100 text-blue-700 flex items-center justify-center text-2xl mb-4">
+                                <i class="fa-solid fa-video"></i>
+                            </div>
+                            <h4 class="font-bold text-slate-900 text-lg">Online Video Consult</h4>
+                            <p class="text-xs text-slate-500 mt-1">Encrypted WhatsApp / HD Web video session from home.</p>
+                            <span class="inline-block mt-4 text-xs font-bold bg-blue-50 text-blue-700 px-3 py-1 rounded-full">Instant Digital Prescription</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 flex justify-between">
+                        <button onclick="prevStep(2)" class="px-6 py-3 bg-slate-100 text-slate-700 font-semibold rounded-xl hover:bg-slate-200">Back</button>
+                        <button onclick="nextStep(4)" id="btn-step-3-next" disabled class="px-6 py-3 bg-slate-300 text-slate-500 font-bold rounded-xl cursor-not-allowed transition-all">
+                            Next: Pick Slot <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- STEP 4: DATE & TIME SLOT PICKER -->
+                <div id="wizard-step-4" class="wizard-step hidden">
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Pick Date & Time Slot</h3>
+                    <p class="text-xs text-slate-500 mb-6">Select your preferred date and convenient time window</p>
+
+                    <div class="grid md:grid-cols-12 gap-6">
+                        <!-- Date selector -->
+                        <div class="md:col-span-5 space-y-3">
+                            <label class="block text-xs font-bold uppercase text-slate-600">Select Date</label>
+                            <input type="date" id="appointment-date-picker" min="" onchange="handleDateChange(this.value)" class="w-full p-3.5 bg-slate-50 border border-slate-300 rounded-xl text-sm font-medium focus:ring-2 focus:ring-teal-500 outline-none">
+                            <p class="text-[11px] text-slate-400">Available for the next 14 days</p>
+                        </div>
+
+                        <!-- Time slot grid -->
+                        <div class="md:col-span-7">
+                            <label class="block text-xs font-bold uppercase text-slate-600 mb-3">Available Slots</label>
+                            <div class="grid grid-cols-3 gap-2.5" id="time-slots-container">
+                                <!-- JS Injected Slots -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 flex justify-between">
+                        <button onclick="prevStep(3)" class="px-6 py-3 bg-slate-100 text-slate-700 font-semibold rounded-xl hover:bg-slate-200">Back</button>
+                        <button onclick="nextStep(5)" id="btn-step-4-next" disabled class="px-6 py-3 bg-slate-300 text-slate-500 font-bold rounded-xl cursor-not-allowed transition-all">
+                            Next: Patient Info <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- STEP 5: PATIENT DETAILS & CONFIRMATION FORM -->
+                <div id="wizard-step-5" class="wizard-step hidden">
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Patient Details</h3>
+                    <p class="text-xs text-slate-500 mb-6">Provide patient details for instant ticket confirmation</p>
+
+                    <form id="patient-form" onsubmit="event.preventDefault(); generateTicket();" class="space-y-4">
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 mb-1">Full Name *</label>
+                                <input type="text" id="patient-name" required placeholder="e.g. Rajesh Kumar" class="w-full p-3 bg-slate-50 border border-slate-300 rounded-xl text-sm outline-none focus:ring-2 focus:ring-teal-500">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 mb-1">Mobile Number (WhatsApp) *</label>
+                                <div class="flex">
+                                    <span class="inline-flex items-center px-3 rounded-l-xl border border-r-0 border-slate-300 bg-slate-100 text-slate-500 text-xs font-bold">+91</span>
+                                    <input type="tel" id="patient-phone" required pattern="[0-9]{10}" placeholder="9876543210" class="w-full p-3 bg-slate-50 border border-slate-300 rounded-r-xl text-sm outline-none focus:ring-2 focus:ring-teal-500">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid sm:grid-cols-3 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 mb-1">Age *</label>
+                                <input type="number" id="patient-age" min="1" max="120" required placeholder="32" class="w-full p-3 bg-slate-50 border border-slate-300 rounded-xl text-sm outline-none focus:ring-2 focus:ring-teal-500">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 mb-1">Gender *</label>
+                                <select id="patient-gender" required class="w-full p-3 bg-slate-50 border border-slate-300 rounded-xl text-sm outline-none focus:ring-2 focus:ring-teal-500">
+                                    <option value="">Select</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 mb-1">Payment Option</label>
+                                <select id="payment-mode" class="w-full p-3 bg-slate-50 border border-slate-300 rounded-xl text-sm outline-none focus:ring-2 focus:ring-teal-500">
+                                    <option value="Pay at Clinic">Pay at Clinic (Cash/UPI/Card)</option>
+                                    <option value="Online UPI / Wallet">Online UPI / QR Code</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- BOOKING SUMMARY PREVIEW BOX -->
+                        <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200 mt-4 text-xs space-y-2">
+                            <h4 class="font-bold text-slate-800 uppercase tracking-wider">Booking Overview</h4>
+                            <div class="grid grid-cols-2 gap-2 text-slate-600">
+                                <div>Doctor: <span class="font-bold text-slate-900" id="summary-doctor">-</span></div>
+                                <div>Specialty: <span class="font-bold text-slate-900" id="summary-dept">-</span></div>
+                                <div>Type: <span class="font-bold text-slate-900" id="summary-type">-</span></div>
+                                <div>Date & Slot: <span class="font-bold text-slate-900" id="summary-slot">-</span></div>
+                                <div>Total Payable: <span class="font-bold text-teal-700 text-sm" id="summary-fee">₹0</span></div>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 flex justify-between items-center">
+                            <button type="button" onclick="prevStep(4)" class="px-6 py-3 bg-slate-100 text-slate-700 font-semibold rounded-xl hover:bg-slate-200">Back</button>
+                            <button type="submit" class="px-8 py-3.5 bg-teal-600 hover:bg-teal-700 text-white font-extrabold rounded-xl shadow-lg shadow-teal-600/30 transition-all hover:scale-105">
+                                Confirm & Generate Ticket <i class="fa-solid fa-check-circle ml-1"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FEE CALCULATOR SECTION -->
+    <section id="calculator" class="py-16 bg-white border-y border-slate-200/80">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <span class="bg-teal-100 text-teal-800 text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Transparent Pricing</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2">Interactive Fee & Diagnostics Calculator</h2>
+                <p class="text-slate-600 text-sm mt-1">Estimate total charges including consultation and optional lab test packages.</p>
+            </div>
+
+            <div class="grid md:grid-cols-12 gap-8 items-start bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200">
+                <div class="md:col-span-7 space-y-4">
+                    <h3 class="font-bold text-slate-900 text-sm uppercase tracking-wider">Select Required Services</h3>
+                    
+                    <div class="space-y-3">
+                        <label class="flex items-center justify-between p-3.5 bg-white rounded-xl border border-slate-200 cursor-pointer hover:border-teal-400">
+                            <span class="flex items-center gap-2 text-sm font-semibold text-slate-800">
+                                <input type="checkbox" class="fee-calc-check accent-teal-600 w-4 h-4" value="800" checked onchange="calculateFeeTotal()">
+                                Senior Specialist OPD Consultation
+                            </span>
+                            <span class="font-bold text-slate-900 text-sm">₹800</span>
+                        </label>
+
+                        <label class="flex items-center justify-between p-3.5 bg-white rounded-xl border border-slate-200 cursor-pointer hover:border-teal-400">
+                            <span class="flex items-center gap-2 text-sm font-semibold text-slate-800">
+                                <input type="checkbox" class="fee-calc-check accent-teal-600 w-4 h-4" value="600" onchange="calculateFeeTotal()">
+                                Comprehensive Blood Profile (CBC + Blood Sugar)
+                            </span>
+                            <span class="font-bold text-slate-900 text-sm">₹600</span>
+                        </label>
+
+                        <label class="flex items-center justify-between p-3.5 bg-white rounded-xl border border-slate-200 cursor-pointer hover:border-teal-400">
+                            <span class="flex items-center gap-2 text-sm font-semibold text-slate-800">
+                                <input type="checkbox" class="fee-calc-check accent-teal-600 w-4 h-4" value="1200" onchange="calculateFeeTotal()">
+                                ECG & Cardiac Screening
+                            </span>
+                            <span class="font-bold text-slate-900 text-sm">₹1,200</span>
+                        </label>
+
+                        <label class="flex items-center justify-between p-3.5 bg-white rounded-xl border border-slate-200 cursor-pointer hover:border-teal-400">
+                            <span class="flex items-center gap-2 text-sm font-semibold text-slate-800">
+                                <input type="checkbox" class="fee-calc-check accent-teal-600 w-4 h-4" value="400" onchange="calculateFeeTotal()">
+                                Digital X-Ray / Diagnostic Scan
+                            </span>
+                            <span class="font-bold text-slate-900 text-sm">₹400</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="md:col-span-5 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+                    <h3 class="font-bold text-slate-900 text-sm uppercase tracking-wider">Estimated Total</h3>
+                    <div class="text-4xl font-black text-teal-700" id="calc-total-display">₹800</div>
+                    <p class="text-xs text-slate-500">Includes all clinic service charges & digital prescription generation. Free 7-day follow-upIncluded.</p>
+                    <a href="#booking" class="block w-full text-center py-3 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-xl shadow-md transition-all text-xs">
+                        Book With Selected Estimate
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DOCTORS DIRECTORY -->
+    <section id="doctors" class="py-16 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="bg-teal-100 text-teal-800 text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Expert Team</span>
+                <h2 class="text-3xl font-extrabold text-slate-900 mt-2">Meet Our Senior Doctors</h2>
+                <p class="text-slate-600 text-sm mt-1">Renowned doctors with over 15+ years of clinical excellence in Delhi</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8" id="doctors-roster-grid">
+                <!-- JS Injected Doctor Cards -->
+            </div>
+        </div>
+    </section>
+
+    <!-- REVIEWS & TESTIMONIALS -->
+    <section class="py-16 bg-white border-t border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl font-extrabold text-slate-900">What Delhi Patients Say</h2>
+                <p class="text-slate-500 text-xs mt-1">Verified Google Reviews for Kalda-Clinic</p>
+            </div>
+
+            <div class="grid sm:grid-cols-3 gap-6">
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-3">
+                    <div class="text-amber-400 text-sm">★★★★★</div>
+                    <p class="text-xs text-slate-600 italic">"Dr. Ananya Kalda is extremely patient-centric. Booking through the web portal took only 30 seconds!"</p>
+                    <p class="text-xs font-bold text-slate-800">— Suman Sharma, South Delhi</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-3">
+                    <div class="text-amber-400 text-sm">★★★★★</div>
+                    <p class="text-xs text-slate-600 italic">"Cleanest clinic in South Ext! The live token status on phone kept me from waiting in queue."</p>
+                    <p class="text-xs font-bold text-slate-800">— Vikramaditya N., Saket</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-3">
+                    <div class="text-amber-400 text-sm">★★★★★</div>
+                    <p class="text-xs text-slate-600 italic">"Excellent online consultation feature. Got my prescription directly on WhatsApp within 10 mins."</p>
+                    <p class="text-xs font-bold text-slate-800">— Meenakshi R., Hauz Khas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-4 gap-8 text-xs">
+            <div class="space-y-3">
+                <span class="text-xl font-extrabold text-white">Kalda<span class="text-teal-400">-Clinic</span></span>
+                <p class="text-slate-400 leading-relaxed">Providing world-class medical, diagnostic, and preventative healthcare in New Delhi.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-3 uppercase tracking-wider">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="#booking" class="hover:text-white">Book Appointment</a></li>
+                    <li><a href="#symptom-checker" class="hover:text-white">AI Symptom Assistant</a></li>
+                    <li><a href="#live-queue" class="hover:text-white">Live OPD Queue</a></li>
+                    <li><a href="#calculator" class="hover:text-white">Price Estimator</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-3 uppercase tracking-wider">Specialties</h4>
+                <p class="space-y-1">Cardiology • Dermatology • Pediatrics • Orthopedics • Neurology • General Medicine</p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-3 uppercase tracking-wider">Contact Delhi Clinic</h4>
+                <p>E-45, Ring Road, South Extension II, New Delhi - 110049</p>
+                <p class="mt-2 font-bold text-teal-400">+91 11 4050 9999</p>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 mt-8 pt-6 border-t border-slate-800 text-center text-[11px] text-slate-500">
+            © 2026 Kalda-Clinic Delhi. All rights reserved. Encrypted & HIPAA Compliant Healthcare Portal.
+        </div>
+    </footer>
+
+    <!-- APPOINTMENT TICKET GENERATION MODAL -->
+    <div id="ticket-modal" class="fixed inset-0 z-50 bg-slate-900/70 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative animate-in fade-in zoom-in duration-200">
+            
+            <button onclick="closeTicketModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-xl font-bold w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center">
+                &times;
+            </button>
+
+            <div class="text-center space-y-2 mb-6">
+                <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-2xl mx-auto">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+                <h3 class="text-2xl font-black text-slate-900">Appointment Confirmed!</h3>
+                <p class="text-xs text-slate-500">Your digital booking pass has been generated.</p>
+            </div>
+
+            <!-- TICKET CARD -->
+            <div id="ticket-printable-area" class="border-2 border-dashed border-slate-300 rounded-2xl p-5 bg-slate-50 relative">
+                <div class="flex justify-between items-center border-b border-slate-200 pb-3 mb-3">
+                    <div>
+                        <p class="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Clinic Pass ID</p>
+                        <p class="text-sm font-black text-teal-700" id="ticket-booking-id">KC-98214</p>
+                    </div>
+                    <div class="text-right">
+                        <span class="bg-emerald-100 text-emerald-800 text-[10px] font-extrabold px-2.5 py-1 rounded-full uppercase">Confirmed</span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3 text-xs mb-4">
+                    <div>
+                        <span class="text-slate-400 block text-[10px]">Patient Name</span>
+                        <strong class="text-slate-800" id="ticket-patient-name">Rajesh Kumar</strong>
+                    </div>
+                    <div>
+                        <span class="text-slate-400 block text-[10px]">Doctor</span>
+                        <strong class="text-slate-800" id="ticket-doctor-name">Dr. Ananya Kalda</strong>
+                    </div>
+                    <div>
+                        <span class="text-slate-400 block text-[10px]">Visit Mode</span>
+                        <strong class="text-slate-800" id="ticket-visit-mode">In-Clinic Visit</strong>
+                    </div>
+                    <div>
+                        <span class="text-slate-400 block text-[10px]">Date & Slot</span>
+                        <strong class="text-slate-800" id="ticket-date-slot">Today, 10:30 AM</strong>
+                    </div>
+                </div>
+
+                <!-- SIMULATED QR CODE -->
+                <div class="bg-white p-3 rounded-xl border border-slate-200 flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-slate-800 rounded-lg flex items-center justify-center text-white text-xs font-mono">
+                            <i class="fa-solid fa-qrcode text-2xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-[10px] font-bold text-slate-700">Scan at Delhi Reception</p>
+                            <p class="text-[9px] text-slate-400">Shows live queue status on entry</p>
+                        </div>
+                    </div>
+                    <span class="text-xs font-bold text-teal-700" id="ticket-fee">₹800</span>
+                </div>
+            </div>
+
+            <!-- SIMULATED NOTIFICATION ALERT -->
+            <div class="mt-4 bg-emerald-50 border border-emerald-200 rounded-xl p-3 flex items-center gap-2 text-xs text-emerald-800">
+                <i class="fa-brands fa-whatsapp text-emerald-600 text-lg"></i>
+                <span>SMS & WhatsApp confirmation sent to mobile number.</span>
+            </div>
+
+            <div class="mt-6 flex gap-3">
+                <button onclick="window.print()" class="w-1/2 py-3 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded-xl text-xs flex items-center justify-center gap-1">
+                    <i class="fa-solid fa-print"></i> Print Ticket
+                </button>
+                <button onclick="closeTicketModal()" class="w-1/2 py-3 bg-teal-600 hover:bg-teal-700 text-white font-bold rounded-xl text-xs">
+                    Done & Return
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECURITY TOAST WARNING FOR BLOCKED SOURCE INSPECTION -->
+    <div id="security-toast" class="fixed bottom-5 right-5 z-50 bg-slate-900 text-white px-5 py-3.5 rounded-2xl shadow-2xl border border-slate-700 text-xs font-semibold hidden flex items-center gap-3 transition-all duration-300 transform translate-y-full">
+        <i class="fa-solid fa-shield-halved text-amber-400 text-lg"></i>
+        <span>Source code inspection & right-click are disabled for patient data security.</span>
+    </div>
+
+    <!-- APP LOGIC & SOURCE CODE PROTECTION SCRIPT -->
+    <script>
+        /* ----------------------------------------------------
+           1. SOURCE CODE PROTECTION SCRIPT (As requested)
+           ---------------------------------------------------- */
+        // Block Right Click
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+            showSecurityToast('Right click is disabled for data security.');
+        });
+
+        // Block Keyboard Shortcuts (F12, Ctrl+Shift+I/J/C, Ctrl+U, Cmd+Opt+I)
+        document.addEventListener('keydown', function (e) {
+            if (
+                e.key === 'F12' ||
+                (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'J' || e.key === 'j' || e.key === 'C' || e.key === 'c')) ||
+                (e.ctrlKey && (e.key === 'U' || e.key === 'u')) ||
+                (e.metaKey && e.altKey && (e.key === 'I' || e.key === 'i'))
+            ) {
+                e.preventDefault();
+                showSecurityToast('Developer inspect tools are restricted.');
+            }
+        });
+
+        function showSecurityToast(msg) {
+            const toast = document.getElementById('security-toast');
+            toast.classList.remove('hidden', 'translate-y-full');
+            setTimeout(() => {
+                toast.classList.add('translate-y-full');
+                setTimeout(() => toast.classList.add('hidden'), 300);
+            }, 3000);
+        }
+
+
+        /* ----------------------------------------------------
+           2. DATA STRUCTURES & DATA MODELS
+           ---------------------------------------------------- */
+        const DEPARTMENTS = [
+            { id: 'cardio', name: 'Cardiology', icon: 'fa-heart-pulse', desc: 'Heart care, ECG & BP specialists' },
+            { id: 'derm', name: 'Dermatology', icon: 'fa-user-nurse', desc: 'Skin, hair & allergy solutions' },
+            { id: 'ortho', name: 'Orthopedics', icon: 'fa-bone', desc: 'Joints, bones & fracture care' },
+            { id: 'peds', name: 'Pediatrics', icon: 'fa-baby', desc: 'Child health & vaccinations' },
+            { id: 'neuro', name: 'Neurology', icon: 'fa-brain', desc: 'Brain, nerve & migraine care' },
+            { id: 'gen', name: 'General Medicine', icon: 'fa-stethoscope', desc: 'Fever, diabetes & routine checkup' }
+        ];
+
+        const DOCTORS = [
+            { id: 'd1', name: 'Dr. Ananya Kalda', deptId: 'cardio', qualification: 'MD, DM (Cardiology) - AIIMS Delhi', exp: '16 Years Exp.', rating: '4.9', fee: 800, img: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=200' },
+            { id: 'd2', name: 'Dr. Vikram Malhotra', deptId: 'derm', qualification: 'MD (Dermatology), DNB', exp: '12 Years Exp.', rating: '4.8', fee: 700, img: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=200' },
+            { id: 'd3', name: 'Dr. Rajesh Sharma', deptId: 'ortho', qualification: 'MS (Orthopedics) - MAMC Delhi', exp: '18 Years Exp.', rating: '4.9', fee: 900, img: 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=200' },
+            { id: 'd4', name: 'Dr. Sneha Verma', deptId: 'peds', qualification: 'MD (Pediatrics) - Safdarjung', exp: '10 Years Exp.', rating: '4.9', fee: 600, img: 'https://images.unsplash.com/photo-1594824813566-7885a3977336?auto=format&fit=crop&q=80&w=200' },
+            { id: 'd5', name: 'Dr. Rohan Mehra', deptId: 'neuro', qualification: 'DM (Neurology) - PGI', exp: '14 Years Exp.', rating: '4.8', fee: 1000, img: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&q=80&w=200' },
+            { id: 'd6', name: 'Dr. Priya Nambiar', deptId: 'gen', qualification: 'MBBS, MD (Internal Medicine)', exp: '11 Years Exp.', rating: '4.7', fee: 500, img: 'https://images.unsplash.com/photo-1651008376811-b90baee60c1f?auto=format&fit=crop&q=80&w=200' }
+        ];
+
+        const SYMPTOMS = [
+            { title: 'Chest Pain / Palpitations', dept: 'cardio', text: 'Chest tightness, irregular heartbeat, or high BP concerns.' },
+            { title: 'Skin Rash / Acne / Hair loss', dept: 'derm', text: 'Skin redness, persistent itching, eczema, or hair loss.' },
+            { title: 'Joint Pain / Fracture / Stiffness', dept: 'ortho', text: 'Knee stiffness, back pain, or sports injuries.' },
+            { title: 'Child Fever / Cough / Allergy', dept: 'peds', text: 'Child health evaluation, growth concerns, or flu.' },
+            { title: 'Headache / Dizziness / Numbness', dept: 'neuro', text: 'Severe migraines, nerve tingling, or sleep issues.' },
+            { title: 'Fever / Weakness / Diabetes', dept: 'gen', text: 'General body pain, viral fever, or routine physical.' }
+        ];
+
+        const TIME_SLOTS = [
+            '09:00 AM', '09:30 AM', '10:00 AM', '10:30 AM',
+            '11:30 AM', '04:00 PM', '04:30 PM', '05:30 PM', '06:30 PM'
+        ];
+
+        /* ----------------------------------------------------
+           3. APPLICATION STATE
+           ---------------------------------------------------- */
+        let currentStep = 1;
+        let selectedData = {
+            deptId: null,
+            doctorId: null,
+            consultType: null,
+            date: null,
+            slot: null,
+            fee: 0
+        };
+
+        /* ----------------------------------------------------
+           4. INITIALIZATION ON DOM LOAD
+           ---------------------------------------------------- */
+        window.onload = function () {
+            renderDepartments();
+            renderSymptomTags();
+            renderDoctorsRoster();
+            setupDateLimits();
+            calculateFeeTotal();
+
+            // Mobile menu toggle
+            document.getElementById('mobile-menu-btn').onclick = function () {
+                const menu = document.getElementById('mobile-menu');
+                menu.classList.toggle('hidden');
+            };
+
+            // Close mobile menu on link click
+            document.querySelectorAll('.mobile-link').forEach(link => {
+                link.onclick = () => document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        };
+
+        /* RENDER DEPARTMENTS IN WIZARD */
+        function renderDepartments() {
+            const container = document.getElementById('department-grid');
+            container.innerHTML = DEPARTMENTS.map(d => `
+                <div onclick="selectDepartment('${d.id}')" id="dept-card-${d.id}" class="dept-card cursor-pointer bg-white border-2 border-slate-200 hover:border-teal-500 rounded-2xl p-4 transition-all">
+                    <div class="w-10 h-10 rounded-xl bg-teal-50 text-teal-600 flex items-center justify-center text-lg mb-2">
+                        <i class="fa-solid ${d.icon}"></i>
+                    </div>
+                    <h4 class="font-bold text-slate-900 text-sm">${d.name}</h4>
+                    <p class="text-[11px] text-slate-500 mt-1 line-clamp-2">${d.desc}</p>
+                </div>
+            `).join('');
+        }
+
+        /* RENDER SYMPTOMS IN TRIAGE WIDGET */
+        function renderSymptomTags() {
+            const container = document.getElementById('symptom-tags-container');
+            container.innerHTML = SYMPTOMS.map((s, idx) => `
+                <button onclick="handleSymptomClick(${idx})" class="p-3 bg-white hover:bg-teal-50 text-slate-700 hover:text-teal-800 border border-slate-200 hover:border-teal-300 rounded-xl text-left transition-all text-xs font-medium shadow-sm">
+                    <i class="fa-solid fa-notes-medical text-teal-500 mr-1.5"></i> ${s.title}
+                </button>
+            `).join('');
+        }
+
+        /* RENDER DOCTOR ROSTER AT BOTTOM */
+        function renderDoctorsRoster() {
+            const container = document.getElementById('doctors-roster-grid');
+            container.innerHTML = DOCTORS.map(doc => {
+                const dept = DEPARTMENTS.find(d => d.id === doc.deptId);
+                return `
+                    <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-4 mb-4">
+                                <img src="${doc.img}" onerror="this.src='https://placehold.co/100x100/14b8a6/ffffff?text=Doctor'" alt="${doc.name}" class="w-16 h-16 rounded-2xl object-cover border border-slate-200 shadow-sm">
+                                <div>
+                                    <h4 class="font-bold text-slate-900 text-base">${doc.name}</h4>
+                                    <p class="text-xs text-teal-600 font-bold">${dept.name}</p>
+                                    <span class="text-[11px] text-slate-400 block">${doc.qualification}</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between text-xs border-t border-slate-100 pt-3 text-slate-600">
+                                <span><i class="fa-solid fa-award text-amber-500 mr-1"></i> ${doc.exp}</span>
+                                <span class="font-bold text-slate-800"><i class="fa-solid fa-star text-amber-400 mr-1"></i> ${doc.rating}</span>
+                                <span class="font-bold text-teal-700">₹${doc.fee}</span>
+                            </div>
+                        </div>
+                        <button onclick="directBookDoctor('${doc.id}', '${doc.deptId}')" class="mt-5 w-full py-2.5 bg-slate-100 hover:bg-teal-600 hover:text-white text-slate-800 font-bold text-xs rounded-xl transition-all">
+                            Book Consultation
+                        </button>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        /* ----------------------------------------------------
+           5. INTERACTIVE BOOKING WIZARD LOGIC
+           ---------------------------------------------------- */
+        function selectDepartment(deptId) {
+            selectedData.deptId = deptId;
+            document.querySelectorAll('.dept-card').forEach(c => c.classList.remove('border-teal-600', 'bg-teal-50/50'));
+            const card = document.getElementById(`dept-card-${deptId}`);
+            if (card) card.classList.add('border-teal-600', 'bg-teal-50/50');
+
+            const btn = document.getElementById('btn-step-1-next');
+            btn.disabled = false;
+            btn.classList.remove('bg-slate-300', 'text-slate-500', 'cursor-not-allowed');
+            btn.classList.add('bg-teal-600', 'text-white', 'hover:bg-teal-700');
+        }
+
+        function renderDoctorsForDept() {
+            const container = document.getElementById('doctors-list-container');
+            const filtered = DOCTORS.filter(d => d.deptId === selectedData.deptId);
+
+            container.innerHTML = filtered.map(doc => `
+                <div onclick="selectDoctor('${doc.id}', ${doc.fee})" id="doc-card-${doc.id}" class="doc-card cursor-pointer border-2 border-slate-200 hover:border-teal-500 rounded-2xl p-4 flex items-center justify-between transition-all bg-white">
+                    <div class="flex items-center gap-3">
+                        <img src="${doc.img}" onerror="this.src='https://placehold.co/80x80/14b8a6/ffffff?text=Doctor'" alt="${doc.name}" class="w-12 h-12 rounded-xl object-cover">
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-sm">${doc.name}</h4>
+                            <p class="text-[11px] text-slate-500">${doc.qualification}</p>
+                            <span class="text-[10px] text-amber-600 font-bold">★ ${doc.rating} (${doc.exp})</span>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-sm font-extrabold text-teal-700">₹${doc.fee}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function selectDoctor(docId, fee) {
+            selectedData.doctorId = docId;
+            selectedData.fee = fee;
+            document.querySelectorAll('.doc-card').forEach(c => c.classList.remove('border-teal-600', 'bg-teal-50/50'));
+            const card = document.getElementById(`doc-card-${docId}`);
+            if (card) card.classList.add('border-teal-600', 'bg-teal-50/50');
+
+            const btn = document.getElementById('btn-step-2-next');
+            btn.disabled = false;
+            btn.classList.remove('bg-slate-300', 'text-slate-500', 'cursor-not-allowed');
+            btn.classList.add('bg-teal-600', 'text-white', 'hover:bg-teal-700');
+        }
+
+        function selectConsultationType(type) {
+            selectedData.consultType = type;
+            document.getElementById('type-in-clinic').classList.remove('border-teal-600', 'bg-teal-50/50');
+            document.getElementById('type-online').classList.remove('border-teal-600', 'bg-teal-50/50');
+
+            if (type === 'In-Clinic Visit') {
+                document.getElementById('type-in-clinic').classList.add('border-teal-600', 'bg-teal-50/50');
+            } else {
+                document.getElementById('type-online').classList.add('border-teal-600', 'bg-teal-50/50');
+            }
+
+            const btn = document.getElementById('btn-step-3-next');
+            btn.disabled = false;
+            btn.classList.remove('bg-slate-300', 'text-slate-500', 'cursor-not-allowed');
+            btn.classList.add('bg-teal-600', 'text-white', 'hover:bg-teal-700');
+        }
+
+        function setupDateLimits() {
+            const picker = document.getElementById('appointment-date-picker');
+            const today = new Date().toISOString().split('T')[0];
+            picker.min = today;
+            picker.value = today;
+            selectedData.date = today;
+            renderTimeSlots();
+        }
+
+        function handleDateChange(val) {
+            selectedData.date = val;
+            renderTimeSlots();
+        }
+
+        function renderTimeSlots() {
+            const container = document.getElementById('time-slots-container');
+            container.innerHTML = TIME_SLOTS.map((slot, i) => `
+                <button onclick="selectTimeSlot('${slot}')" id="slot-btn-${i}" class="slot-btn p-2.5 bg-white border border-slate-200 hover:border-teal-500 rounded-xl text-xs font-semibold text-slate-700 transition-all text-center">
+                    ${slot}
+                </button>
+            `).join('');
+        }
+
+        function selectTimeSlot(slot) {
+            selectedData.slot = slot;
+            document.querySelectorAll('.slot-btn').forEach(b => b.classList.remove('bg-teal-600', 'text-white', 'border-teal-600'));
+            event.target.classList.add('bg-teal-600', 'text-white', 'border-teal-600');
+
+            const btn = document.getElementById('btn-step-4-next');
+            btn.disabled = false;
+            btn.classList.remove('bg-slate-300', 'text-slate-500', 'cursor-not-allowed');
+            btn.classList.add('bg-teal-600', 'text-white', 'hover:bg-teal-700');
+        }
+
+        function updateSummary() {
+            const doc = DOCTORS.find(d => d.id === selectedData.doctorId);
+            const dept = DEPARTMENTS.find(d => d.id === selectedData.deptId);
+
+            document.getElementById('summary-doctor').innerText = doc ? doc.name : '-';
+            document.getElementById('summary-dept').innerText = dept ? dept.name : '-';
+            document.getElementById('summary-type').innerText = selectedData.consultType || '-';
+            document.getElementById('summary-slot').innerText = `${selectedData.date} @ ${selectedData.slot}`;
+            document.getElementById('summary-fee').innerText = `₹${selectedData.fee}`;
+        }
+
+        function nextStep(step) {
+            if (step === 2) renderDoctorsForDept();
+            if (step === 5) updateSummary();
+
+            document.getElementById(`wizard-step-${currentStep}`).classList.add('hidden');
+            document.getElementById(`wizard-step-${step}`).classList.remove('hidden');
+
+            currentStep = step;
+            updateStepProgressBar();
+        }
+
+        function prevStep(step) {
+            document.getElementById(`wizard-step-${currentStep}`).classList.add('hidden');
+            document.getElementById(`wizard-step-${step}`).classList.remove('hidden');
+
+            currentStep = step;
+            updateStepProgressBar();
+        }
+
+        function updateStepProgressBar() {
+            const percentage = ((currentStep - 1) / 4) * 100;
+            document.getElementById('step-progress-bar').style.width = `${percentage}%`;
+
+            document.querySelectorAll('.step-indicator').forEach(ind => {
+                const s = parseInt(ind.dataset.step);
+                const circle = ind.querySelector('div');
+                if (s <= currentStep) {
+                    circle.classList.remove('bg-slate-200', 'text-slate-600');
+                    circle.classList.add('bg-teal-600', 'text-white');
+                } else {
+                    circle.classList.remove('bg-teal-600', 'text-white');
+                    circle.classList.add('bg-slate-200', 'text-slate-600');
+                }
+            });
+        }
+
+        function directBookDoctor(docId, deptId) {
+            selectDepartment(deptId);
+            renderDoctorsForDept();
+            const doc = DOCTORS.find(d => d.id === docId);
+            if (doc) selectDoctor(docId, doc.fee);
+            nextStep(3);
+            document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        /* ----------------------------------------------------
+           6. SYMPTOM ASSISTANT & FEE ESTIMATOR LOGIC
+           ---------------------------------------------------- */
+        function handleSymptomClick(index) {
+            const item = SYMPTOMS[index];
+            const dept = DEPARTMENTS.find(d => d.id === item.dept);
+
+            document.getElementById('rec-department-title').innerText = `Recommended: ${dept.name}`;
+            document.getElementById('rec-department-desc').innerText = item.text;
+            document.getElementById('symptom-recommendation').classList.remove('hidden');
+
+            selectedData.tempDept = item.dept;
+        }
+
+        function filterDepartmentFromSymptom() {
+            if (selectedData.tempDept) {
+                selectDepartment(selectedData.tempDept);
+                nextStep(2);
+                document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function calculateFeeTotal() {
+            const checkboxes = document.querySelectorAll('.fee-calc-check');
+            let total = 0;
+            checkboxes.forEach(cb => {
+                if (cb.checked) total += parseInt(cb.value);
+            });
+            document.getElementById('calc-total-display').innerText = `₹${total.toLocaleString('en-IN')}`;
+        }
+
+        /* ----------------------------------------------------
+           7. TICKET GENERATION & MODAL
+           ---------------------------------------------------- */
+        function generateTicket() {
+            const name = document.getElementById('patient-name').value;
+            const doc = DOCTORS.find(d => d.id === selectedData.doctorId);
+            const randomId = 'KC-' + Math.floor(10000 + Math.random() * 90000);
+
+            document.getElementById('ticket-booking-id').innerText = randomId;
+            document.getElementById('ticket-patient-name').innerText = name;
+            document.getElementById('ticket-doctor-name').innerText = doc ? doc.name : 'Kalda Specialist';
+            document.getElementById('ticket-visit-mode').innerText = selectedData.consultType;
+            document.getElementById('ticket-date-slot').innerText = `${selectedData.date} (${selectedData.slot})`;
+            document.getElementById('ticket-fee').innerText = `₹${selectedData.fee}`;
+
+            document.getElementById('ticket-modal').classList.remove('hidden');
+        }
+
+        function closeTicketModal() {
+            document.getElementById('ticket-modal').classList.add('hidden');
+            // Reset wizard to step 1
+            prevStep(1);
+        }
+    </script>
+</body>
+</html>
